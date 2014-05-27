@@ -1,0 +1,10 @@
+an extremely basic and poorly written user requirements outline (and I apologize for that)
+
+user requirements:
+1. The user will be able to see various kanji symbols and input their translations in english
+2. The system will have two seperate boxes for input, one input box for the "On" reading and the other for the "Kun" reading
+3. Each box will be graded seperately so the user will know what is incorrect
+4. If a word has multiple translations the user can enter them in a format seperate by \'s. i.e.: "chair/boat"
+5. The kanji symbols will be images that are loaded from seperate files
+6. The system will keep track of how many correct and incorrect inputs there were
+7. The system will be programmed in the Java language to offer easy exportability to Android market if requested
