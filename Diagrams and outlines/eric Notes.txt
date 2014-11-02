@@ -1,0 +1,3 @@
+1. Display correct answers underneath text fields after submission
+2. If not all answers are inputted, test correctness of those that are. If correct appear on bottom
+3. Have number of answers next to box so user knows how many
