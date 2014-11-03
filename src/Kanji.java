@@ -40,7 +40,7 @@ public class Kanji extends Application {
 		VBox mainBox = VBoxBuilder.create().alignment(Pos.CENTER).build();
 
 		//Horizontal row for picture
-		Card first = new Card("E:\\Git\\KanjiQuiz\\src\\cards\\card2.txt");
+		Card first = new Card("src/cards/card2.txt");
 		HBox picture = HBoxBuilder.create().alignment(Pos.CENTER).build();
 		picture.getChildren().add(first.getImageView());
 		

@@ -9,6 +9,7 @@ public class CardHandler {
 	private ArrayList<String> meanings = new ArrayList<String>(1);
 	private ArrayList<String> on = new ArrayList<String>(1);
 	private ArrayList<String> kun = new ArrayList<String>(1);
+	private int num;
 	
 	public CardHandler(String fileName){
 		File f = new File(fileName);
@@ -46,6 +47,7 @@ public class CardHandler {
 		}
 		lineReader.close();
 	}
+	
 	private void readKunReading(){
 		int i = 0;
 		String line = input.nextLine();
@@ -55,6 +57,10 @@ public class CardHandler {
 			i++;
 		}
 		lineReader.close();
+	}
+	
+	private int readNum(){
+		return input.nextInt();
 	}
 	
 	/**
@@ -67,9 +73,13 @@ public class CardHandler {
 		this.readMeanings();
 		this.readOnReading();
 		this.readKunReading();
+		num = this.readNum();
 		return fileLoc;
 	}
 
+	public int getNum(){
+		return num;
+	}
 	public ArrayList<String> getOn() {
 		return on;
 	}

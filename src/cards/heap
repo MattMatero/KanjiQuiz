@@ -8,7 +8,7 @@
 
 
 public class Heap {
-	private Card[] myHeap; //the actual heap
+	private int[] myHeap; //the actual heap
 	private int numElements; //number of elements in the heap
 	private int maxSize; //max size of the heap
 
@@ -17,7 +17,7 @@ public class Heap {
 	 * @param maxSize, the maximum number of elements the heap can contain
 	 */
 	public Heap(int maxSize){
-		myHeap = new Card[maxSize];
+		myHeap = new int[maxSize];
 		numElements = 0;
 		this.maxSize = maxSize;
 	}
@@ -64,7 +64,7 @@ public class Heap {
 	 * @param yPos - the second element you are swapping
 	 */
 	private void swap(int xPos, int yPos){
-		Card temp = myHeap[xPos];
+		int temp = myHeap[xPos];
 		myHeap[xPos] = myHeap[yPos];
 		myHeap[yPos] = temp;
 	}
@@ -75,8 +75,8 @@ public class Heap {
 	 */
 	private void maxHeapify(int pos){
 		if(!isLeaf(pos)){
-			if(myHeap[pos].compare(myHeap[this.leftChild(pos)]) == -1 || myHeap[pos].compare( myHeap[this.rightChild(pos)]) == -1){
-				if(myHeap[this.leftChild(pos)].compare(myHeap[this.rightChild(pos)]) == 1){
+			if(myHeap[pos] < myHeap[this.leftChild(pos)] || myHeap[pos] < myHeap[this.rightChild(pos)]){
+				if(myHeap[this.leftChild(pos)] > myHeap[this.rightChild(pos)]){
 					swap(pos, this.leftChild(pos));
 					maxHeapify(this.leftChild(pos));
 				}else{
@@ -100,14 +100,14 @@ public class Heap {
 	 * inserts an element into the heap
 	 * @param element - the desired element to be inserted
 	 */
-	public void insert(Card element){
+	public void insert(int element){
 		if(numElements +1 > maxSize){
 			maxSize *= 2;
 		}
 		myHeap[numElements++] = element;
 		int current = numElements;
 		
-		while(myHeap[current].compare( myHeap[this.parent(current)]) == -1){
+		while(myHeap[current] > myHeap[this.parent(current)]){
 			swap(current,this.parent(current));
 			current = this.parent(current);
 		}
